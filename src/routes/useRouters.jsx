@@ -2,13 +2,13 @@ import { useRoutes, Outlet, Navigate } from "react-router-dom";
 import routerPath from "../constants/routerPath";
 import Auth from "../pages/Auth";
 import Home from "../pages/Home";
-
+import MainLayout from "../layouts/MainLayout/MainLayout";
+import Main from "../pages/Main";
 export default function useRouters() {
   const routers = useRoutes([
     { path: routerPath.index, index: true, element: <Home /> },
     {
       path: routerPath.index,
-      // element: <Outlet />,
       children: [
         {
           path: routerPath.sign_in,
@@ -18,11 +18,19 @@ export default function useRouters() {
     },
     {
       path: routerPath.index,
-      // element: <Outlet />,
       children: [
         {
           path: routerPath.sign_up,
           element: <Auth type="sign_up" />,
+        },
+      ],
+    },
+    {
+      path: routerPath.index,
+      children: [
+        {
+          path: routerPath.upload,
+          element: <MainLayout />,
         },
       ],
     },

@@ -1,7 +1,6 @@
 import React from "react";
-import AuthImage from "../../assets/images/Auth.jpg";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/vite.svg";
+import { Logo, AuthImage } from "../../components/Icons";
 
 const Auth = ({ type }) => {
   return (
@@ -9,23 +8,33 @@ const Auth = ({ type }) => {
       <div className="grid lg:min-h-screen lg:grid-cols-12">
         <section className=" flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
           <img src={AuthImage} alt="Filez Up Auth Page" className="absolute inset-0 h-full w-full object-cover " />
-          <div className="hidden lg:relative lg:block lg:p-32">
+          <div className="hidden lg:relative lg:block lg:py-32 lg:pl-2 lg:pr-2 lg:mb-[12rem] lg:ml-[2rem] xl:ml-[12rem]">
             <div className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl flex">
-              <span>Welcome to</span>
-              <div className="font-bold text-2xl flex items-center ml-2">
+              <span className="text-[#ffb810]">Welcome to</span>
+              <div className="font-bold text-xl flex items-center ml-2">
                 <img src={Logo} alt="Filez up Logo" loading="lazy" width={50} height={50} />
-                <div className="ml-1 text-2xl font-bold text-[#8b73fe]">Filez Up</div>
+                <div className="ml-1 text-2xl font-bold text-[#8b73fe] font-mono">Filez Up</div>
+              </div>
+            </div>
+            <div className="text-xl font-bold sm:text-5xl mt-5">
+              <div className="mb-2">
+                <span className="text-[#66a3ff]">Upload </span>
+                <span className="text-white">your files</span>
+              </div>
+              <div>
+                <span className="text-[#66a3ff]">Share </span>
+                <span className="text-white">your files in one place</span>
               </div>
             </div>
           </div>
         </section>
-        <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6 z-50">
+        <main className="flex items-center justify-center  py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6 z-50">
           <div className="max-w-xl lg:max-w-3xl bg-white rounded ">
             <div className="w-fit rounded">
-              <div className="flex flex-col items-stretch justify-start gap-8 shadow-2xl w-[25rem] p-12 rounded">
+              <div className="flex flex-col items-stretch justify-start gap-8 shadow-2xl w-[20rem] lg:w-[25rem] p-12 rounded">
                 <div className="font-bold text-2xl flex items-center">
                   <img src={Logo} alt="Filez up Logo" loading="lazy" width={50} height={50} />
-                  <div className="ml-1 text-2xl font-bold text-[#8b73fe]">Filez Up</div>
+                  <div className="ml-1 text-2xl font-bold text-[#8b73fe] font-mono">Filez Up</div>
                 </div>
                 <div className="font-semibold text-xl"> {type === "sign_in" ? "LOGIN" : "REGISTER"} </div>
                 {type !== "sign_in" && (
@@ -34,7 +43,7 @@ const Auth = ({ type }) => {
                       Name
                     </label>
                     <div className="mt-2 border border-gray-300 p-2 rounded">
-                      <input type="text" placeholder="Your name" className="w-full outline-none" />
+                      <input type="" placeholder="Your name" className="w-full outline-none" />
                     </div>
                   </div>
                 )}
@@ -43,7 +52,7 @@ const Auth = ({ type }) => {
                     Email
                   </label>
                   <div className="mt-2 border border-gray-300 p-2 rounded">
-                    <input type="text" placeholder="Your email" className="w-full outline-none" />
+                    <input type="" placeholder="Your email" className="w-full outline-none" />
                   </div>
                 </div>
                 <div className="flex flex-col">
@@ -51,7 +60,7 @@ const Auth = ({ type }) => {
                     Password
                   </label>
                   <div className="mt-2 border border-gray-300 p-2 rounded">
-                    <input type="text" placeholder="Your password" className="w-full outline-none" />
+                    <input type="" placeholder="Your password" className="w-full outline-none" />
                   </div>
                 </div>
                 <div className="bg-[#8b73fe] py-1 rounded text-center text-white font-semibold cursor-pointer">
