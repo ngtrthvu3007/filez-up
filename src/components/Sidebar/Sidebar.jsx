@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Logo, LeftArrow, UploadIcon, Files } from "../Icons";
 
-const SideBar = ({ open, onOpen }) => {
+const SideBar = ({ open, onOpen, page }) => {
   return (
     <div>
       <div className={`h-full w-64 flex-col fixed inset-y-0 z-30 md:flex ${open ? "" : "hidden"} bg-white`}>
@@ -15,13 +15,19 @@ const SideBar = ({ open, onOpen }) => {
           </div>
           <div className="flex flex-col float-left w-full">
             <Link to="/upload">
-              <button className="flex gap-2 p-4 px-6 hover:bg-gray-100 w-full text-gray-500 bg-blue-50 text-primary">
+              <button
+                className={`flex gap-2 p-4 px-6 w-full ${
+                  page === "upload" ? "hover:bg-[#5AB2FF] bg-[#8b73fe] text-[#FEB516] font-semibold" : ""
+                }`}>
                 <UploadIcon />
                 <h2>Upload</h2>
               </button>
             </Link>
             <Link to="/your-files">
-              <button className="flex gap-2 p-4 px-6 hover:bg-gray-100 w-fulltext-gray-500 null">
+              <button
+                className={`flex gap-2 p-4 px-6 w-full ${
+                  page === "your-files" ? "hover:bg-[#5AB2FF] bg-[#8b73fe] text-[#FEB516] font-semibold" : ""
+                }`}>
                 <Files />
                 <h2>Files</h2>
               </button>

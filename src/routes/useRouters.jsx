@@ -30,7 +30,20 @@ export default function useRouters() {
       children: [
         {
           path: routerPath.upload,
-          element: <MainLayout />,
+          element: (
+            <MainLayout page="upload">
+              <Main />
+            </MainLayout>
+          ),
+        },
+      ],
+    },
+    {
+      path: routerPath.index,
+      children: [
+        {
+          path: routerPath.your_files,
+          element: <MainLayout page="your-files"></MainLayout>,
         },
       ],
     },

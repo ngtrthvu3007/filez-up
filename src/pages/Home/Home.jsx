@@ -1,8 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Logo, AuthImage, Menu } from "../../components/Icons";
+import { Dropdown } from "flowbite-react";
+import DropdownSection from "../../components/Dropdown/Dropdown";
 
 const Home = () => {
+  const Button = () => {
+    return (
+      <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
+        <span className="sr-only">Toggle menu</span>
+        <Menu />
+      </button>
+    );
+  };
+
+  const DropdownItem = () => {
+    return (
+      <>
+        <Dropdown.Item>
+          <Link className=" pl-1 text-[14px] font-semibold" to="/upload">
+            Upload
+          </Link>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Link className="pl-1 text-[14px] font-semibold" to="/files">
+            Your Files
+          </Link>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <a className="pl-1 text-[14px] font-semibold" href="https://github.com/ngtrthvu3007" target="_blank">
+            About Me
+          </a>
+        </Dropdown.Item>
+      </>
+    );
+  };
+
   return (
     <div>
       <header>
@@ -42,10 +75,7 @@ const Home = () => {
                   Get Started
                 </Link>
               </div>
-              <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
-                <span className="sr-only">Toggle menu</span>
-                <Menu />
-              </button>
+              <DropdownSection Button={Button} Item={DropdownItem} useHeader={false} />
             </div>
           </div>
         </div>
